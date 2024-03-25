@@ -7,7 +7,7 @@ $employeesPerPage = 10;
 // Get the current page from the URL query string
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-// Call the static method to display employees for the current page
+
 $employees = NhanVien::displayEmployees($page, $employeesPerPage);
 
 ?>
@@ -82,7 +82,7 @@ $employees = NhanVien::displayEmployees($page, $employeesPerPage);
     </style>
 </head></head>
 <body>
-    <h1>List of Employees</h1>
+    <h1>Danh sách nhân viên</h1>
     <table>
         <thead>
         <a href="add_employee.php">ADD</a>

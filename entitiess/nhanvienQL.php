@@ -7,8 +7,7 @@ class NhanVien {
         $offset = ($page - 1) * $employeesPerPage; 
         $queryString = "SELECT * FROM NHANVIEN LIMIT $employeesPerPage OFFSET $offset"; 
         $employees = $db->select_to_array($queryString);
-
-        return $employees; // Return the fetched employees
+        return $employees; 
     }
 
     public static function getTotalEmployees() {

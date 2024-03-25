@@ -12,24 +12,27 @@ class NhanVien {
             echo "Error: Failed to retrieve employees.";
             return;
         }
-
-        // Display the list of employees
-        echo "<h2>List of Employees</h2>";
+        echo "<h2>Danh sách nhân viên</h2>";
         echo "<table border='1'>";
         echo "<tr><th>Ma_NV</th><th>Ten_NV</th><th>Giới tính</th><th>Noi_Sinh</th><th>Ma_Phong</th><th>Luong</th></tr>";
         foreach ($employees as $employee) {
             echo "<tr>";
-            echo "<td>{$employee['Ma_NV']}</td>";
-            echo "<td>{$employee['Ten_NV']}</td>";
-            echo "<td><img src='img/{$employee['Phai']}.png' alt='{$employee['Phai']}' style='width: 50px; height: 50px;'></td>";
-            echo "<td>{$employee['Noi_Sinh']}</td>";
-            echo "<td>{$employee['Ma_Phong']}</td>";
-            echo "<td>{$employee['Luong']}</td>";
+            echo "<td>" . $employee['Ma_NV'] . "</td>";
+            echo "<td>" . $employee['Ten_NV'] . "</td>";
+            echo "<td>";
+            if ($employee['Phai'] === 'NU') {
+                echo "<img src='img/woman.png' alt='Woman' style='width: 60px; height: 60px;'>";
+            } else {
+                echo "<img src='img/man.png' alt='Man' style='width: 60px; height: 60px;'>";
+            }
+            echo "</td>";
+            echo "<td>" . $employee['Noi_Sinh'] . "</td>";
+            echo "<td>" . $employee['Ma_Phong'] . "</td>";
+            echo "<td>" . $employee['Luong'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
     }
-
     public static function getTotalEmployees() {
         $db = new Db();
         $queryString = "SELECT COUNT(*) AS total FROM NHANVIEN"; 

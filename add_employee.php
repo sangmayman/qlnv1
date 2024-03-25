@@ -72,26 +72,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Add Employee</title>
 </head>
 <body>
-    <h1>Add Employee</h1>
+    <h1>Thêm Nhân Viên</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
-
         <label for="gender">Gender:</label><br>
         <input type="radio" id="male" name="gender" value="Male">
         <label for="male">Male</label>
         <input type="radio" id="female" name="gender" value="Female">
         <label for="female">Female</label><br>
-
         <label for="birth_place">Birth Place:</label><br>
         <input type="text" id="birth_place" name="birth_place"><br>
-
         <label for="department_id">Department ID:</label><br>
         <input type="text" id="department_id" name="department_id"><br>
-
         <label for="salary">Salary:</label><br>
         <input type="text" id="salary" name="salary"><br><br>
-
         <input type="submit" value="Submit">
     </form>
 </body>
